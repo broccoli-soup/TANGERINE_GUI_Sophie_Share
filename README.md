@@ -1,3 +1,8 @@
+# Additional information about GUI
+- The GUI is at TANGERINE_GUI_v2.py.
+- The packages in requirements.txt are necessary.
+- Furthermore, the GUI requires packages SimpleITK, sv-ttk, and pydicom.
+
 # 3D Masked Autoencoders for Volumetric Medical Imaging Data
 
 This repository provides a **3D extension of the Masked Autoencoder (MAE) framework**, designed for self-supervised pretraining on **volumetric medical imaging data** (e.g., CT scans). Our method extends MAE to 3D by incorporating **custom volumetric patch embedding** and **Transformer-based feature learning**, enabling efficient representation learning for medical imaging applications.
