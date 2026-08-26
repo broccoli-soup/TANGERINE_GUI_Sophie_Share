@@ -1,5 +1,6 @@
 # Additional information about GUI
-- The GUI is at TANGERINE_GUI_v2.py.
+- The GUI is at TANGERINE_GUI_v2.py, and can be simply run with python TANGERINE_GUI_v2.py.
+- There's more detail on the GUI functionality in the interface itself.
 - The packages in requirements.txt are necessary.
 - Furthermore, the GUI requires packages SimpleITK, sv-ttk, and pydicom.
 
