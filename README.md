@@ -4,6 +4,27 @@
 - The packages in requirements.txt are necessary.
 - Furthermore, the GUI requires packages SimpleITK, sv-ttk, and pydicom.
 
+## Program details
+- For nii.gz files, it will run TANGERINE on the provided preprocessed CT volumes and save the resulting embedding vectors as .npy files. Please ensure that they contain CT volumes that have been clipped to the range [-1200, 800] HU, min-max scaled to [0, 1], and resized to 256 × 256 × 256.
+- For DICOM directories, it will recursively search through the selected directory for DICOM series. The program will skip directories containing fewer than 10 DICOM files. It will then sort DICOM slices by their physical position and preprocess each series (min-max scaling between -1200 and 800 HU) and run TANGERINE on these preprocessed CT volumes. It will recreate the entire original directory structure in the selected output folder, but saving each resulting TANGERINE embedding as a .npy file in place of the .dcm files. 
+    
+Here is some sample console output: 
+```bash
+    (aug25_env) (base) shaun@mac 3D-MAE-MedImaging % python3 TANGERINE_GUI.py
+    2026-08-25 11:58:26.049 python3[66068:8547167] +[IMKClient subclass]: chose IMKClient_Legacy
+    2026-08-25 11:58:26.049 python3[66068:8547167] +[IMKInputSession subclass]: chose IMKInputSession_Legacy
+
+    TANGERINE model successfully loaded
+
+    Output directory /Users/shaun/Documents/aug_25_test selected
+
+    Loaded /Users/shaun/Documents/dicom_loading/100331_0.nii.gz successfully, has shape torch.Size([256, 256, 256]), min 0.08799999952316284, max 1.0
+    TANGERINE successfully run on /Users/shaun/Documents/dicom_loading/100331_0.nii.gz, embedding vector saved to /Users/shaun/Documents/aug_25_test/100331_0.npy
+    
+    Loaded /Users/shaun/Documents/dicom_loading/100331_1.nii.gz successfully, has shape torch.Size([256, 256, 256]), min 0.08799999952316284, max 1.0
+    TANGERINE successfully run on /Users/shaun/Documents/dicom_loading/100331_1.nii.gz, embedding vector saved to /Users/shaun/Documents/aug_25_test/100331_1.npy
+```
+
 # 3D Masked Autoencoders for Volumetric Medical Imaging Data
 
 This repository provides a **3D extension of the Masked Autoencoder (MAE) framework**, designed for self-supervised pretraining on **volumetric medical imaging data** (e.g., CT scans). Our method extends MAE to 3D by incorporating **custom volumetric patch embedding** and **Transformer-based feature learning**, enabling efficient representation learning for medical imaging applications.
