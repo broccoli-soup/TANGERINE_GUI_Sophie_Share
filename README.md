@@ -1,4 +1,4 @@
-# Additional information about GUI
+# GUI-Specific Information
 - The GUI is at TANGERINE_GUI_v2.py, and can be simply run with python TANGERINE_GUI_v2.py.
 - A video tutorial on GUI use can be found here https://drive.google.com/file/d/1crL96D4tzsuvU4zcfjJtpoXDIB4c68Xq/view?usp=sharing
 - The packages in requirements.txt are necessary.
