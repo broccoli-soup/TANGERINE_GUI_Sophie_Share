@@ -7,6 +7,7 @@ To use the GUI,
 - Install packages in requirements.txt
 - Furthermore, install SimpleITK (pip install SimpleITK), sv-ttk (pip install sv-ttk), and pydicom (pip install pydicom)
 - Download model weights from https://zenodo.org/records/18835750.
+- To test that it works, feel free to use the NON_PHI_EXAMPLE_256x256x256.nii.gz file. 
 
 ## Program details
 - For nii.gz files, it will run TANGERINE on the provided preprocessed CT volumes and save the resulting embedding vectors as .npy files. Please ensure that they contain CT volumes that have been clipped to the range [-1200, 800] HU, min-max scaled to [0, 1], and resized to 256 × 256 × 256.
