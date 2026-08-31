@@ -1,8 +1,12 @@
 # GUI-Specific Information
 - The GUI is at TANGERINE_GUI_v2.py, and can be simply run with python TANGERINE_GUI_v2.py.
 - A video tutorial on GUI use can be found here https://drive.google.com/file/d/1crL96D4tzsuvU4zcfjJtpoXDIB4c68Xq/view?usp=sharing
-- The packages in requirements.txt are necessary.
-- Furthermore, the GUI requires packages SimpleITK, sv-ttk, and pydicom.
+
+To use the GUI, 
+- Clone this repository
+- Install packages in requirements.txt
+- Furthermore, install SimpleITK (pip install SimpleITK), sv-ttk (pip install sv-ttk), and pydicom (pip install pydicom)
+- Download model weights from https://zenodo.org/records/18835750.
 
 ## Program details
 - For nii.gz files, it will run TANGERINE on the provided preprocessed CT volumes and save the resulting embedding vectors as .npy files. Please ensure that they contain CT volumes that have been clipped to the range [-1200, 800] HU, min-max scaled to [0, 1], and resized to 256 × 256 × 256.
