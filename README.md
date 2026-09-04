@@ -1,15 +1,15 @@
 # GUI-Specific Information
-- The GUI is at TANGERINE_GUI_v2.py, and can be simply run with python TANGERINE_GUI_v2.py.
+- The GUI is at TANGERINE_GUI_v3.py, and can be simply run with python TANGERINE_GUI_v3.py. An older version without the option to load .csv files can be found at TANGERINE_GUI_v2.py. 
 - A video tutorial on GUI use can be found here https://drive.google.com/file/d/1crL96D4tzsuvU4zcfjJtpoXDIB4c68Xq/view?usp=sharing
 
 ## Program details
 - For nii.gz files, it will run TANGERINE on the provided preprocessed CT volumes and save the resulting embedding vectors as .npy files. Please ensure that they contain CT volumes that have been clipped to the range [-1200, 800] HU, min-max scaled to [0, 1], and resized to 256 × 256 × 256.
 - For DICOM directories, it will recursively search through the selected directory for DICOM series. The program will skip directories containing fewer than 10 DICOM files. It will then sort DICOM slices by their physical position and preprocess each series (min-max scaling between -1200 and 800 HU) and run TANGERINE on these preprocessed CT volumes. It will recreate the entire original directory structure in the selected output folder, but saving each resulting TANGERINE embedding as a .npy file in place of the .dcm files.
+- For .csv files, the program will preserve the input directory structure in the selected output folder, saving each TANGERINE embedding as a .npy file in place of the corresponding DICOM series.
 
 ## To use the GUI, 
 - Clone this repository
-- Install packages in requirements.txt
-- Furthermore, install SimpleITK (pip install SimpleITK), sv-ttk (pip install sv-ttk), and pydicom (pip install pydicom)
+- Install packages in upd_requirements.txt
 - Download model weights from https://zenodo.org/records/18835750.
 - To test that it works, feel free to use the NON_PHI_EXAMPLE_256x256x256.nii.gz file as input, which can be found at https://drive.google.com/file/d/1H0ghash-lTVrEKfuu05wZ44qPJB1qZE9/view?usp=sharing 
     
